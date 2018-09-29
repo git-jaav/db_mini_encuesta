@@ -23,11 +23,11 @@ ENGINE = InnoDB;
 DROP TABLE IF EXISTS `me_encuesta_alternativa` ;
 
 CREATE  TABLE IF NOT EXISTS `me_encuesta_alternativa` (
-  `entea_id` INT NOT NULL AUTO_INCREMENT ,
+  `enalt_id` INT NOT NULL AUTO_INCREMENT ,
   `ente_id` INT NOT NULL ,
-  `entea_opcion` VARCHAR(200) NOT NULL ,
-  `entea_estado` CHAR(1) NOT NULL ,
-  PRIMARY KEY (`entea_id`) ,
+  `enalt_opcion` VARCHAR(200) NOT NULL ,
+  `enalt_estado` CHAR(1) NOT NULL ,
+  PRIMARY KEY (`enalt_id`) ,
   INDEX `fk_me_encuesta_tema_opcion_me_encuesta_tema` (`ente_id` ASC) ,
   CONSTRAINT `fk_me_encuesta_tema_opcion_me_encuesta_tema`
     FOREIGN KEY (`ente_id` )
@@ -53,13 +53,15 @@ CREATE  TABLE IF NOT EXISTS `me_encuesta_persona_respuesta` (
   `enper_profesion` VARCHAR(100) NULL ,
   `enper_lugar_trabajo` VARCHAR(100) NULL ,
   `enper_codigo_usuario` VARCHAR(100) NULL ,
-  `entea_id` INT NOT NULL ,
+  `enper_email` VARCHAR(45) NULL ,
+  `enper_fecha_registro` VARCHAR(45) NULL ,
+  `enalt_id` INT NOT NULL ,
   `enper_estado` CHAR(1) NOT NULL ,
   PRIMARY KEY (`enper_encuesta_persona_id`) ,
-  INDEX `fk_me_encuesta_persona_respuesta_me_encuesta_alternativa1` (`entea_id` ASC) ,
+  INDEX `fk_me_encuesta_persona_respuesta_me_encuesta_alternativa1` (`enalt_id` ASC) ,
   CONSTRAINT `fk_me_encuesta_persona_respuesta_me_encuesta_alternativa1`
-    FOREIGN KEY (`entea_id` )
-    REFERENCES `me_encuesta_alternativa` (`entea_id` )
+    FOREIGN KEY (`enalt_id` )
+    REFERENCES `me_encuesta_alternativa` (`enalt_id` )
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
