@@ -9,11 +9,11 @@ SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='TRADITIONAL';
 DROP TABLE IF EXISTS `me_encuesta_tema` ;
 
 CREATE  TABLE IF NOT EXISTS `me_encuesta_tema` (
-  `ente_id` INT NOT NULL AUTO_INCREMENT ,
+  `ente_codigo` VARCHAR(10) NOT NULL ,
   `ente_tema` VARCHAR(100) NOT NULL ,
   `ente_detalles` VARCHAR(500) NULL ,
   `ente_estado` CHAR(1) NOT NULL ,
-  PRIMARY KEY (`ente_id`) )
+  PRIMARY KEY (`ente_codigo`) )
 ENGINE = InnoDB;
 
 
@@ -24,14 +24,14 @@ DROP TABLE IF EXISTS `me_encuesta_alternativa` ;
 
 CREATE  TABLE IF NOT EXISTS `me_encuesta_alternativa` (
   `enalt_id` INT NOT NULL AUTO_INCREMENT ,
-  `ente_id` INT NOT NULL ,
+  `ente_codigo` VARCHAR(10) NOT NULL ,
   `enalt_opcion` VARCHAR(200) NOT NULL ,
   `enalt_estado` CHAR(1) NOT NULL ,
   PRIMARY KEY (`enalt_id`) ,
-  INDEX `fk_me_encuesta_tema_opcion_me_encuesta_tema` (`ente_id` ASC) ,
-  CONSTRAINT `fk_me_encuesta_tema_opcion_me_encuesta_tema`
-    FOREIGN KEY (`ente_id` )
-    REFERENCES `me_encuesta_tema` (`ente_id` )
+  INDEX `fk_me_encuesta_alternativa_me_encuesta_tema1` (`ente_codigo` ASC) ,
+  CONSTRAINT `fk_me_encuesta_alternativa_me_encuesta_tema1`
+    FOREIGN KEY (`ente_codigo` )
+    REFERENCES `me_encuesta_tema` (`ente_codigo` )
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
