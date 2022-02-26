@@ -12,3 +12,5 @@ INSERT INTO `me_encuesta_tema` (`ente_codigo`, `ente_tema`, `ente_detalles`, `en
 
 INSERT INTO `me_encuesta_alternativa` (`enalt_id`, `ente_codigo`, `enalt_opcion`, `enalt_estado`) VALUES (1, 'LP_FAVORIT', 'JAVA', 'A');
 INSERT INTO `me_encuesta_alternativa` (`enalt_id`, `ente_codigo`, `enalt_opcion`, `enalt_estado`) VALUES (2, 'LP_FAVORIT', 'C#', 'A');
+
+COMMIT;
