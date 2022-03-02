@@ -3,8 +3,8 @@
 ----------------------------------------------------------------------------------------------------------------------------------------
 
 --DELETE
-DELETE me_encuesta_alternativa;
-DELETE me_encuesta_tema;
+DELETE FROM me_encuesta_alternativa;
+DELETE FROM me_encuesta_tema;
 
 --INSERT
 INSERT INTO `me_encuesta_tema` (`ente_codigo`, `ente_tema`, `ente_detalles`, `ente_estado`) VALUES ('FRUTA_FAV', 'Fruta Favorita', NULL, 'A');
