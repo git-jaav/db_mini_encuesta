@@ -1,12 +1,12 @@
-----------------------------------------------------------------------------------------------------------------------------------------
+-- --------------------------------------------------------------------------------------------------------------------------------------
 -- CARGA INICIAL --
-----------------------------------------------------------------------------------------------------------------------------------------
+-- --------------------------------------------------------------------------------------------------------------------------------------
 
---DELETE
+-- DELETE
 DELETE FROM me_encuesta_alternativa;
 DELETE FROM me_encuesta_tema;
 
---INSERT
+-- INSERT
 INSERT INTO `me_encuesta_tema` (`ente_codigo`, `ente_tema`, `ente_detalles`, `ente_estado`) VALUES ('FRUTA_FAV', 'Fruta Favorita', NULL, 'A');
 INSERT INTO `me_encuesta_tema` (`ente_codigo`, `ente_tema`, `ente_detalles`, `ente_estado`) VALUES ('LP_FAVORIT', 'Lenguaje de Programación favorito', NULL, 'A');
 
